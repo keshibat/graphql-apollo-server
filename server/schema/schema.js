@@ -15,19 +15,19 @@ const {
 
 
 //dummy data
-const cars = [
-  { id: "1", carName: "BMW", averagespeed: 30, traveldsince: 10000,  ownerId: "23"},
-  { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, ownerId: "40"},
-  { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, ownerId: "51"},
-  { id: "4", carName: "VW", averagespeed: 40, traveldsince: 10000, ownerId: "51" },
-  { id: "5", carName: "HONDA", averagespeed: 60, traveldsince: 10000, ownerId: "23" }
-]
+// const cars = [
+//   { id: "1", carName: "BMW", averagespeed: 30, traveldsince: 10000,  ownerId: "23"},
+//   { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, ownerId: "40"},
+//   { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, ownerId: "51"},
+//   { id: "4", carName: "VW", averagespeed: 40, traveldsince: 10000, ownerId: "51" },
+//   { id: "5", carName: "HONDA", averagespeed: 60, traveldsince: 10000, ownerId: "23" }
+// ]
 
-const owners = [
-  { firstName: "Sam", id: "23" },
-  { firstName: "Buce", id: "40" },
-  { firstName: "Billy", id: "51" }
-]
+// const owners = [
+//   { firstName: "Sam", id: "23" },
+//   { firstName: "Buce", id: "40" },
+//   { firstName: "Billy", id: "51" }
+// ]
 
 
 const CarType = new GraphQLObjectType ({
@@ -113,6 +113,28 @@ const RootQuery = new GraphQLObjectType({
   }
 })
 
+
+
+const Mutation = new GraphQLObjectType({
+  name: "Mutation",
+  fields: {
+    addOwner: {
+      type: OwnerType,
+      args: {
+        firstName: { type: GraphQLString}
+      },
+      resolve(parent, args) {
+        let owner = new Owner({
+          firstName: args.firstName
+        });
+        return owner.save();
+      }
+    }
+  }
+})
+
+
 module.exports = new GraphQLSchema({
-  query: RootQuery
+  query: RootQuery,
+  mutation: Mutation
 });
