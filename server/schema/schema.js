@@ -1,19 +1,23 @@
 const graphql = require("graphql");
 const _ = require('lodash');
 
-const { GraphQLObjectType,
-        GraphQLString,
-        GraphQLInt,
-        GraphQLSchema,
-        GraphQLID
+const {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLInt,
+  GraphQLSchema,
+  GraphQLID,
+  GraphQLList
 } = graphql;
 
 
 //dummy data
 const cars = [
-  { id: "1", carName: "BMW X1", averagespeed: 30, traveldsince: 10000,  OwnerId: "23"},
-  { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, OwnerId: "40"},
-  { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, OwnerId: "51"}
+  { id: "1", carName: "BMW", averagespeed: 30, traveldsince: 10000,  ownerId: "23"},
+  { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, ownerId: "40"},
+  { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, ownerId: "51"},
+  { id: "4", carName: "VW", averagespeed: 40, traveldsince: 10000, ownerId: "51" },
+  { id: "5", carName: "HONDA", averagespeed: 60, traveldsince: 10000, ownerId: "23" }
 ]
 
 const owners = [
@@ -51,7 +55,7 @@ const CarType = new GraphQLObjectType ({
       type: OwnerType,
       resolve(parent, args){
         console.log(parent);
-        return _.find(owners, {id: parent.OwenerId});
+        return _.find(owners, { id: parent.ownerId });
       }
     }
   })
@@ -62,7 +66,13 @@ const OwnerType = new GraphQLObjectType({
   name: "Owner",
   fields: () => ({
     id: { type: GraphQLID },
-    firstName: { type: GraphQLString }
+    firstName: { type: GraphQLString },
+    // cars: {
+    //   type: new GraphQLList(CarType),
+    //   resolve(parent, args){
+    //     return _.filter(cars, {ownerId: parent.id});
+    //   }
+    // }
   })
 });
 
@@ -82,7 +92,7 @@ const RootQuery = new GraphQLObjectType({
       type: OwnerType,
     args: { id: { type: GraphQLID}},
     resolve(parent, args){
-      return _.find(owner, {id: args.id});
+      return _.find(owners, {id: args.id});
     }
     }
   }
