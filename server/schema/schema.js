@@ -1,5 +1,8 @@
 const graphql = require("graphql");
+const Car = require("../models/car");
+const Owner = require("../models/owner");
 const _ = require('lodash');
+
 
 const {
   GraphQLObjectType,
@@ -113,4 +116,3 @@ const RootQuery = new GraphQLObjectType({
 module.exports = new GraphQLSchema({
   query: RootQuery
 });
-
