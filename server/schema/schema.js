@@ -67,12 +67,12 @@ const OwnerType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     firstName: { type: GraphQLString },
-    // cars: {
-    //   type: new GraphQLList(CarType),
-    //   resolve(parent, args){
-    //     return _.filter(cars, {ownerId: parent.id});
-    //   }
-    // }
+    cars: {
+      type: new GraphQLList(CarType),
+      resolve(parent, args){
+        return _.filter(cars, { ownerId: parent.id });
+      }
+    }
   })
 });
 
