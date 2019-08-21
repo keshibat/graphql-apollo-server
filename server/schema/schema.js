@@ -16,7 +16,7 @@ const cars = [
   { carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, id: "3" }
 ]
 
-const users = [
+const owner = [
   { firstName: "Sam", id: "1" },
   { firstName: "Buce", id: "2" },
   { firstName: "Billy", id: "3" }
@@ -51,8 +51,8 @@ const CarType = new GraphQLObjectType ({
 });
 
 
-const UserType = new GraphQLObjectType({
-  name: "User",
+const OwnerType = new GraphQLObjectType({
+  name: "Owner",
   fields: () => ({
     id: { type: GraphQLID },
     firstName: { type: GraphQLString }
@@ -71,11 +71,11 @@ const RootQuery = new GraphQLObjectType({
         return _.find(cars, {id: args.id});
       }
     },
-    user: {
-      type: UserType,
+    owner: {
+      type: OwnerType,
     args: { id: { type: GraphQLID}},
     resolve(parent, args){
-      return _.find(users, {id: args.id});
+      return _.find(owner, {id: args.id});
     }
     }
   }
