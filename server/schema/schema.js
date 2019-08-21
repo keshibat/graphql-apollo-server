@@ -129,6 +129,58 @@ const Mutation = new GraphQLObjectType({
         });
         return owner.save();
       }
+    },
+    addCar: {
+      type: CarType,
+      args: {
+        carName: { type: GraphQLString },
+        latfillup: { type: GraphQLInt },
+        latfilluptime: { type: GraphQLString },
+        // lastfilluplocation: { type: GraphQLString },
+        fuelleft: { type: GraphQLInt },
+        traveldsince: { type: GraphQLInt },
+        diagnostic: { type: GraphQLString },
+        diagnosticdetail: { type: GraphQLString },
+        businessratio: { type: GraphQLInt },
+        businesstotal: { type: GraphQLInt },
+        averagespeed: { type: GraphQLInt },
+        traveldistancetotal: { type: GraphQLInt },
+        traveldistancethisyear: { type: GraphQLInt },
+        timeincar: { type: GraphQLInt },
+        emissions: { type: GraphQLInt },
+        fueleconomy: { type: GraphQLInt },
+        parking: { type: GraphQLString },
+        timetraveld: { type: GraphQLString },
+        startlocation: { type: GraphQLString },
+        endlocation: { type: GraphQLString },
+        ownerId: { type: GraphQLID }
+      },
+      resolve(parent, args){
+        let car = new Car({
+          carName: args.carName,
+          latfillup: args.latfillup,
+          latfilluptime: args.latfilluptime,
+          // lastfilluplocation: args.lastfilluplocation,
+          fuelleft: args.fuelleft,
+          traveldsince: args.traveldsince,
+          diagnostic: args.diagnostic,
+          diagnosticdetail: args.diagnosticdetail,
+          businessratio: args.businessratio,
+          businesstotal: args.businesstotal,
+          averagespeed: args.averagespeed,
+          traveldistancetotal: args.traveldistancetotal,
+          traveldistancethisyear: args.traveldistancethisyear,
+          timeincar: args.timeincar,
+          emissions: args.emissions,
+          fueleconomy: args.fueleconomy,
+          parking: args.parking,
+          timetraveld: args.timetraveld,
+          startlocation: args.startlocation,
+          endlocation: args.endlocation,
+          ownerId: args.ownerId
+        });
+        return car.save();
+      }
     }
   }
 })
@@ -138,3 +190,36 @@ module.exports = new GraphQLSchema({
   query: RootQuery,
   mutation: Mutation
 });
+
+
+
+
+// adding cars mutation
+// graphql does not like lastfilluplocation
+// lastfilluplocation
+
+// mutation {
+//   addCar(carName: "BMW", latfillup: 30, latfilluptime: "2019-01-17-T09:02", fuelleft: 58, traveldsince: 30, diagnostic: "PowerSteering", diagnosticdetail: "seeamechanic", businessratio: 75, businesstotal: 300000, averagespeed: 28, traveldistancetotal: 34000000, traveldistancethisyear: 7600, timeincar: 120, emissions: 74, fueleconomy: 12, parking: "HOWDOIDISPLAYPARKIMGSPOT??", timetraveld: "2019-08-12-T11:02", startlocation: "Brsibane", endlocation: "Sydney", ownerId: "5d5d256fb83eef860d9358cc"){
+//     carName
+//     latfillup
+//     latfilluptime
+//     fuelleft
+//     traveldsince
+//     diagnostic
+//     diagnosticdetail
+//     businessratio
+//     businesstotal
+//     averagespeed
+//     traveldistancetotal
+//     traveldistancethisyear
+//     timeincar
+//     emissions
+//     fueleconomy
+//     parking
+//     timetraveld
+//     startlocation
+//     endlocation
+//   }
+// }
+
+
