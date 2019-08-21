@@ -54,8 +54,8 @@ const CarType = new GraphQLObjectType ({
     owner: {
       type: OwnerType,
       resolve(parent, args){
-        console.log(parent);
-        return _.find(owners, { id: parent.ownerId });
+        // console.log(parent);
+        // return _.find(owners, { id: parent.ownerId });
       }
     }
   })
@@ -70,7 +70,7 @@ const OwnerType = new GraphQLObjectType({
     cars: {
       type: new GraphQLList(CarType),
       resolve(parent, args){
-        return _.filter(cars, { ownerId: parent.id });
+
       }
     }
   })
@@ -85,26 +85,26 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID}},
       resolve(parent, args) {
         //code to get data from db /other source
-        return _.find(cars, {id: args.id});
+        // return _.find(cars, {id: args.id});
       }
     },
     owner: {
       type: OwnerType,
     args: { id: { type: GraphQLID}},
     resolve(parent, args){
-      return _.find(owners, {id: args.id});
+      // return _.find(owners, {id: args.id});
     }
     },
     cars: {
       type: new GraphQLList(CarType),
       resolve(parent, args){
-        return cars;
+        // return cars;
       }
     },
     owners: {
       type: new GraphQLList(OwnerType),
       resolve(parent, args){
-        return owners;
+        // return owners;
       }
     }
   }
