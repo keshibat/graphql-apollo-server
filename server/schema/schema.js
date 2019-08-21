@@ -11,15 +11,15 @@ const { GraphQLObjectType,
 
 //dummy data
 const cars = [
-  { carName: "BMW X1", averagespeed: 30, traveldsince: 10000, id: "1"},
-  { carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, id: "2" },
-  { carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, id: "3" }
+  { id: "1", carName: "BMW X1", averagespeed: 30, traveldsince: 10000,  OwnerId: "23"},
+  { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, OwnerId: "40"},
+  { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, OwnerId: "51"}
 ]
 
-const owner = [
-  { firstName: "Sam", id: "1" },
-  { firstName: "Buce", id: "2" },
-  { firstName: "Billy", id: "3" }
+const owners = [
+  { firstName: "Sam", id: "23" },
+  { firstName: "Buce", id: "40" },
+  { firstName: "Billy", id: "51" }
 ]
 
 
@@ -46,7 +46,14 @@ const CarType = new GraphQLObjectType ({
     parking: { type: GraphQLString },
     timetraveld: { type: GraphQLString },
     startlocation: { type: GraphQLString },
-    endlocation: { type: GraphQLString }
+    endlocation: { type: GraphQLString },
+    owner: {
+      type: OwnerType,
+      resolve(parent, args){
+        console.log(parent);
+        return _.find(owners, {id: parent.OwenerId});
+      }
+    }
   })
 });
 
