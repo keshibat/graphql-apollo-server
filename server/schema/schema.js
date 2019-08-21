@@ -96,17 +96,17 @@ const RootQuery = new GraphQLObjectType({
     }
     },
     cars: {
-      type: GraphQLList(CarType),
+      type: new GraphQLList(CarType),
       resolve(parent, args){
         return cars;
       }
+    },
+    owners: {
+      type: new GraphQLList(OwnerType),
+      resolve(parent, args){
+        return owners;
+      }
     }
-    // owners: {
-    //   type: GraphQLList(OwnerType),
-    //   ressolve(parent, args){
-    //     return owners;
-    //   }
-    // }
   }
 })
 
