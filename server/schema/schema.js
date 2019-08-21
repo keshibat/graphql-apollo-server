@@ -4,7 +4,8 @@ const _ = require('lodash');
 const { GraphQLObjectType,
         GraphQLString,
         GraphQLInt,
-        GraphQLSchema
+        GraphQLSchema,
+        GraphQLID
 } = graphql;
 
 
@@ -15,11 +16,17 @@ const cars = [
   { carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, id: "3" }
 ]
 
+const users = [
+  { firstName: "Sam", id: "1" },
+  { firstName: "Buce", id: "2" },
+  { firstName: "Billy", id: "3" }
+]
+
 
 const CarType = new GraphQLObjectType ({
   name: "Car",
   fields: () => ({
-    id: { type: GraphQLString },
+    id: { type: GraphQLID },
     carName: { type: GraphQLString },
     latfillup: { type: GraphQLInt },
     latfilluptime: { type: GraphQLString },
@@ -44,16 +51,32 @@ const CarType = new GraphQLObjectType ({
 });
 
 
+const UserType = new GraphQLObjectType({
+  name: "User",
+  fields: () => ({
+    id: { type: GraphQLID },
+    firstName: { type: GraphQLString }
+  })
+});
+
+
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
     car: {
       type: CarType,
-      args: {id: {type: GraphQLString}},
+      args: { id: { type: GraphQLID}},
       resolve(parent, args) {
         //code to get data from db /other source
         return _.find(cars, {id: args.id});
       }
+    },
+    user: {
+      type: UserType,
+    args: { id: { type: GraphQLID}},
+    resolve(parent, args){
+      return _.find(users, {id: args.id});
+    }
     }
   }
 })
