@@ -1,16 +1,8 @@
 import React, { Component } from "react";
-import { gql } from "apollo-boost";
 import { graphql } from "react-apollo";
 
+import { getOwnerQuery } from "../queris/queris";
 
-const getOwnerQuery = gql`
-  {
-    owners {
-      firstName
-      id
-    }
-  }
-`;
 
 
 class AddCar extends Component {
