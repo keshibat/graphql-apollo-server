@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-
+// replace PASSWORD to real password
 mongoose.connect("mongodb+srv://dbuser:R9rsZ6Ohu11x3QQH@gofar-rvxzr.mongodb.net/test?retryWrites=true&w=majority");
 mongoose.connection.once("open", () => {
   console.log("connected to database");

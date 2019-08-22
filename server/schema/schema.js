@@ -14,22 +14,6 @@ const {
 } = graphql;
 
 
-//dummy data
-// const cars = [
-//   { id: "1", carName: "BMW", averagespeed: 30, traveldsince: 10000,  ownerId: "23"},
-//   { id: "2", carName: "TOYOTA", averagespeed: 50, traveldsince: 10000, ownerId: "40"},
-//   { id: "3", carName: "SUZUKI", averagespeed: 40, traveldsince: 10000, ownerId: "51"},
-//   { id: "4", carName: "VW", averagespeed: 40, traveldsince: 10000, ownerId: "51" },
-//   { id: "5", carName: "HONDA", averagespeed: 60, traveldsince: 10000, ownerId: "23" }
-// ]
-
-// const owners = [
-//   { firstName: "Sam", id: "23" },
-//   { firstName: "Buce", id: "40" },
-//   { firstName: "Billy", id: "51" }
-// ]
-
-
 const CarType = new GraphQLObjectType ({
   name: "Car",
   fields: () => ({
@@ -57,8 +41,8 @@ const CarType = new GraphQLObjectType ({
     owner: {
       type: OwnerType,
       resolve(parent, args){
-        // console.log(parent);
-        // return _.find(owners, { id: parent.ownerId });
+        // return _.find(owners, { id: parent.ownerId })
+        return Owner.findById(parent.ownerId)
       }
     }
   })
@@ -73,7 +57,7 @@ const OwnerType = new GraphQLObjectType({
     cars: {
       type: new GraphQLList(CarType),
       resolve(parent, args){
-
+        return Car.find({ ownerId: parent.id })
       }
     }
   })
@@ -89,6 +73,7 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         //code to get data from db /other source
         // return _.find(cars, {id: args.id});
+        return Car.findById(args.id);
       }
     },
     owner: {
@@ -96,18 +81,21 @@ const RootQuery = new GraphQLObjectType({
     args: { id: { type: GraphQLID}},
     resolve(parent, args){
       // return _.find(owners, {id: args.id});
+      return Owner.findById(args.id);
     }
     },
     cars: {
       type: new GraphQLList(CarType),
       resolve(parent, args){
         // return cars;
+        return Car.find({});
       }
     },
     owners: {
       type: new GraphQLList(OwnerType),
       resolve(parent, args){
         // return owners;
+        return Owner.find({});
       }
     }
   }
@@ -192,8 +180,13 @@ module.exports = new GraphQLSchema({
 });
 
 
+//mutation adding owner
 
-
+// mutation {
+//   addOwner(firstName: "Sam"){
+//     firstName
+//   }
+// }
 // adding cars mutation
 // graphql does not like lastfilluplocation
 // lastfilluplocation
