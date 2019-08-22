@@ -6,6 +6,7 @@ import DashboardView from "./Pages/Dashboard/DashboardView";
 import LoginView from "./Pages/Login/LoginView";
 
 
+
 //Apollo client setup
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
