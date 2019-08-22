@@ -21,8 +21,8 @@ const getOwnersQuery = gql`
 
 
 const AddCarMutation = gql`
- mutation {
-   addCar(carName: "", latfillup: 0, latfilluptime: "", fuelleft: 0, traveldsince: 0, diagnostic: "", diagnosticdetail: "", businessratio: 0, businesstotal: 0, averagespeed: 0, traveldistancetotal: 0, traveldistancethisyear: 0, timeincar: 0, emissions: 0, fueleconomy: 0, parking: "", timetraveld: "", startlocation: "", endlocation: "", ownerId: ""){
+ mutation($carName: String!, $latfillup: Number!, $latfilluptime: String!, $fuelleft: Number!, $traveldsince: Number!, $diagnostic: String!, $diagnosticdetail: String!, $businessratio: Number!, $businesstotal: Number!, $averagespeed: Number!, $traveldistancetotal: Number!, $traveldistancethisyear: Number!, $timeincar: Number!, $emissions: Number!, $fueleconomy: Number!, $parking: String!, $timetraveld: Number!, $startlocation: String!, $endlocation: String!, $ownerId: ID!){
+   addCar(carName: $carName, latfillup: $latfillup, latfilluptime: $latfilluptime, fuelleft: $fuelleft, traveldsince: $traveldistancethisyear, diagnostic: $diagnostic, diagnosticdetail: $diagnosticdetail, businessratio: $businessratio, businesstotal: $businesstotal, averagespeed: $averagespeed, traveldistancetotal: $traveldistancetotal, traveldistancethisyear: $traveldistancethisyear, timeincar: $timeincar, emissions: $emissions, fueleconomy: $fueleconomy, parking: $parking, timetraveld: $timetraveld, startlocation: $startlocation, endlocation: $endlocation, ownerId: $ownerId){
      carName
      latfillup
      latfilluptime
@@ -52,4 +52,5 @@ export {
   getOwnersQuery,
   AddCarMutation
 };
+
 

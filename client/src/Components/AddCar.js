@@ -12,11 +12,11 @@ class AddCar extends Component {
       carName: '',
       latfillup: 0,
       latfilluptime: '',
-      lastfilluplocation: "",
+      lastfilluplocation: '',
       fuelleft: 0,
       traveldsince: 0,
-      diagnostic: "",
-      diagnosticdetail: "",
+      diagnostic: '',
+      diagnosticdetail: '',
       businessratio: 0,
       businesstotal: 0,
       averagespeed: 0,
@@ -25,9 +25,9 @@ class AddCar extends Component {
       timeincar: 0,
       emissions: 0,
       fueleconomy: 0,
-      parking: "",
-      startlocation: "",
-      endlocation: "",
+      parking: '',
+      startlocation: '',
+      endlocation: '',
       ownerId: ''
     };
   }
@@ -45,7 +45,30 @@ class AddCar extends Component {
 
   submitForm(e){
     e.preventDefault();
-    this.props.AddCarMutation();
+    this.props.AddCarMutation({
+      variables: {
+        carName: this.state.carName,
+        latfillup: this.state.latfillup,
+        latfilluptime: this.state.latfilluptime,
+        lastfilluplocation: this.state.lastfilluplocation,
+        fuelleft: this.state.fuelleft,
+        traveldsince: this.state.traveldsince,
+        diagnostic: this.state.diagnostic,
+        diagnosticdetail: this.state.diagnosticdetail,
+        businessratio: this.state.businessratio,
+        businesstotal: this.state.businesstotal,
+        averagespeed: this.state.averagespeed,
+        traveldistancetotal: this.state.traveldistancetotal,
+        traveldistancethisyear: this.state.traveldistancethisyear,
+        timeincar: this.state.timeincar,
+        emissions: this.state.emissions,
+        fueleconomy: this.state.fueleconomy,
+        parking: this.state.parking,
+        startlocation: this.state.startlocation,
+        endlocation: this.state.endlocation,
+        ownerId: this.state.ownerId
+      }
+    });
 
   }
 

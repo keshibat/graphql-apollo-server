@@ -4,6 +4,7 @@ import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
 import DashboardView from "./Pages/Dashboard/DashboardView";
 import LoginView from "./Pages/Login/LoginView";
+import MutationView from "./Pages/Mutation/MutationView";
 
 
 
@@ -11,7 +12,6 @@ import LoginView from "./Pages/Login/LoginView";
 const client = new ApolloClient({
   uri: "http://localhost:4000/graphql"
 })
-
 
 
 class App extends React.Component {
@@ -24,6 +24,7 @@ class App extends React.Component {
             <div>
               <Route exact path="/" component={DashboardView} />
               <Route exact path="/login" component={LoginView} />
+              <Route exact path="/mutation" component={MutationView} />
             </div>
           </BrowserRouter>
         </>
