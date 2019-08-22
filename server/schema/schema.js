@@ -10,7 +10,8 @@ const {
   GraphQLInt,
   GraphQLSchema,
   GraphQLID,
-  GraphQLList
+  GraphQLList,
+  GraphQLNonNull
 } = graphql;
 
 
@@ -109,7 +110,7 @@ const Mutation = new GraphQLObjectType({
     addOwner: {
       type: OwnerType,
       args: {
-        firstName: { type: GraphQLString}
+        firstName: { type: new GraphQLNonNull(GraphQLString)}
       },
       resolve(parent, args) {
         let owner = new Owner({
@@ -121,7 +122,7 @@ const Mutation = new GraphQLObjectType({
     addCar: {
       type: CarType,
       args: {
-        carName: { type: GraphQLString },
+        carName: { type: new GraphQLNonNull(GraphQLString)},
         latfillup: { type: GraphQLInt },
         latfilluptime: { type: GraphQLString },
         // lastfilluplocation: { type: GraphQLString },
