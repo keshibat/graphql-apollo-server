@@ -15,14 +15,24 @@ const getCarsQuery = gql`
 
 
 class CarList extends Component {
+  displayCars() {
+    let data = this.props.data;
+    if (data.loading) {
+      return (<div>Loading</div>);
+    } else {
+      return data.cars.map(car => {
+        return (
+          <li key={car.id}>{car.carName}</li>
+        )
+      })
+    }
+  }
   render() {
-    console.log(this.props);
     return (
       <div>
         <ul>
-          <li>Car Name </li>
+          {this.displayCars()}
         </ul>
-
       </div>
     );
   }
