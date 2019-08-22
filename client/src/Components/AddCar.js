@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-import { getOwnerQuery } from "../queris/queris";
-import { bind } from "@wry/context";
+import flowright from "lodash.flowright";
+import { getOwnersQuery, AddCarMutation } from "../queris/queris";
+// import { bind } from "@wry/context";
 
 
 class AddCar extends Component {
@@ -32,7 +33,7 @@ class AddCar extends Component {
   }
 
   displayAuthor(){
-    let data = this.props.data;
+    let data = this.props.getOwnersQuery;
     if(data.loading){
       return( <option disabled>Loading Owners</option>);
     } else {
@@ -43,8 +44,9 @@ class AddCar extends Component {
   }
 
   submitForm(e){
-    e.preventDefault()
-    console.log(this.state);
+    e.preventDefault();
+    this.props.AddCarMutation();
+
   }
 
 
@@ -144,8 +146,10 @@ class AddCar extends Component {
   }
 }
 
-export default graphql(getOwnerQuery)(AddCar);
-
+export default flowright(
+  graphql(getOwnersQuery, { name: "getOwnersQuery" }),
+  graphql(AddCarMutation, { name: "AddCarMutation" })
+)(AddCar);
 
 
 
