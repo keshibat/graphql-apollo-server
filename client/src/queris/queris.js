@@ -118,9 +118,65 @@ const getTravelDistanceThisYearQuery = gql`
   }
 `;
 
+const getTimeInCarQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      timeincar
+    }
+  }
+`;
+
+const getEmissionsQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      emissions
+    }
+  }
+`;
+
+const getFuelEconomyQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      fueleconomy
+    }
+  }
+`;
 
 
+const getParkingQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      parking
+    }
+  }
+`;
 
+
+const getTimeTraveldQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      timetraveld
+    }
+  }
+`;
+
+
+const getStartLocationQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      startlocation
+    }
+  }
+`;
+
+
+const getEndLocationQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      endlocation
+    }
+  }
+`;
 
 
 
@@ -167,7 +223,14 @@ export {
   getBusinessTotalQuery,
   getAverageSpeedQuery,
   getTravelDistanceTotalQuery,
-  getTravelDistanceThisYearQuery
+  getTravelDistanceThisYearQuery,
+  getTimeInCarQuery,
+  getEmissionsQuery,
+  getFuelEconomyQuery,
+  getParkingQuery,
+  getTimeTraveldQuery,
+  getStartLocationQuery,
+  getEndLocationQuery
 };
 
 

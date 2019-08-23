@@ -15,6 +15,14 @@ import BusinessTotalCard from "../../Components/Card/BusinessTotalCard";
 import AverageSpeedCard from "../../Components/Card/AverageSpeedCard";
 import TravelDistanceTotalCard from "../../Components/Card/TravelDistanceTotalCard";
 import TravelDistanceThisYearCard from "../../Components/Card/TravelDistanceThisYearCard";
+import TimeInCarCard from "../../Components/Card/TimeInCarCard";
+import EmissionsCard from "../../Components/Card/EmissionsCard";
+import FuelEconomyCard from "../../Components/Card/FuelEconomyCard";
+import ParkingCard from "../../Components/Card/ParkingCard";
+import TimeTraveldCard from "../../Components/Card/TimeTraveldCard";
+import StartLocationCard from "../../Components/Card/StartLocationCard";
+import EndLocationCard from "../../Components/Card/EndLocationCard";
+
 
 
 
@@ -36,6 +44,13 @@ class DashboardView extends Component {
         <AverageSpeedCard />
         <TravelDistanceTotalCard />
         <TravelDistanceThisYearCard />
+        <TimeInCarCard />
+        <EmissionsCard />
+        <FuelEconomyCard />
+        <ParkingCard />
+        <TimeTraveldCard />
+        <StartLocationCard />
+        <EndLocationCard />
 
         <GoogleMap />
         <AntdTable />
