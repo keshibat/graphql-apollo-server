@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import GoogleMap from "../../Components/GoogleMap/GoogleMap";
-import AntdTable from "../../Components/AntdTable/AntdTable";
+import AntdTableComponent from "../../Components/AntdTable/AntdTableComponent";
 
 import CarList from "../../Components/CarList"
 import CarNameCard from "../../Components/Card/CarNameCard";
@@ -53,7 +53,9 @@ class DashboardView extends Component {
         <EndLocationCard />
 
         <GoogleMap />
-        <AntdTable />
+
+        <h1>Table</h1>
+        <AntdTableComponent />
 
       </div>
     );
