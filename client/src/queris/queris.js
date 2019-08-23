@@ -28,13 +28,32 @@ const getCarNameQuery = gql`
 `;
 
 
-const getCarlatfillupQuery = gql`
+const getLastFillupQuery = gql`
   {
     car(id: "5d5dd3aa55642b15a9d08d07") {
       latfillup
     }
   }
 `;
+
+const getLastFillupTimeQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      latfilluptime
+    }
+  }
+`;
+
+const getFuelLeftQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      fuelleft
+    }
+  }
+`;
+
+
+
 
 
 
@@ -70,8 +89,10 @@ export {
   getCarsQuery,
   getOwnersQuery,
   AddCarMutation,
-  getCarlatfillupQuery,
-  getCarNameQuery
+  getCarNameQuery,
+  getLastFillupQuery,
+  getLastFillupTimeQuery,
+  getFuelLeftQuery
 };
 
 
