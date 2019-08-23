@@ -52,8 +52,46 @@ const getFuelLeftQuery = gql`
   }
 `;
 
+const getTraveldSinceQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      traveldsince
+    }
+  }
+`;
+
+const getDiagnosticQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      diagnostic
+    }
+  }
+`;
+
+const getDiagnosticDetailQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      diagnosticdetail
+    }
+  }
+`;
 
 
+const getBusinessRatioQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      businessratio
+    }
+  }
+`;
+
+const getBusinessTotalQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      businesstotal
+    }
+  }
+`;
 
 
 
@@ -92,7 +130,12 @@ export {
   getCarNameQuery,
   getLastFillupQuery,
   getLastFillupTimeQuery,
-  getFuelLeftQuery
+  getFuelLeftQuery,
+  getTraveldSinceQuery,
+  getDiagnosticQuery,
+  getDiagnosticDetailQuery,
+  getBusinessRatioQuery,
+  getBusinessTotalQuery
 };
 
 

@@ -7,6 +7,11 @@ import CarNameCard from "../../Components/Card/CarNameCard";
 import LastFillupCard from "../../Components/Card/LastFillupCard";
 import LastFillupTimeCard from "../../Components/Card/LastFillupTimeCard";
 import FuelLeftCard from "../../Components/Card/FuelLeftCard";
+import TraveldSinceCard from "../../Components/Card/TraveldSinceCard";
+import DiagnosticCard from "../../Components/Card/DiagnosticCard";
+import DiagnosticDetailCard from "../../Components/Card/DiagnosticDetailCard";
+import BusinessRatioCard from "../../Components/Card/BusinessRatioCard";
+import BusinessTotalCard from "../../Components/Card/BusinessTotalCard";
 
 
 
@@ -20,6 +25,11 @@ class DashboardView extends Component {
         <LastFillupCard />
         <LastFillupTimeCard />
         <FuelLeftCard />
+        <TraveldSinceCard />
+        <DiagnosticCard />
+        <DiagnosticDetailCard />
+        <BusinessRatioCard />
+        <BusinessTotalCard />
 
         <GoogleMap />
         <AntdTable />
