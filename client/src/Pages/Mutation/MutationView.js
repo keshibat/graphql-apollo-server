@@ -6,7 +6,10 @@ class MutationView extends Component {
   render() {
     return (
       <>
-        <AddCar />
+      <div>
+          <AddCar />
+      </div>
+
       </>
     );
   }
