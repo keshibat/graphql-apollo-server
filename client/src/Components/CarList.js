@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-
 import { getCarsQuery } from "../queris/queris";
 
 
@@ -30,7 +29,3 @@ class CarList extends Component {
 }
 
 export default graphql(getCarsQuery)(CarList);
-
-
-
-

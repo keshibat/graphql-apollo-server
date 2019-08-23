@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
-import { getCarlatfillupQuery } from "../../queris/queris";
+import { getCarNameQuery } from "../../queris/queris";
 
 
-class LastFillupCard extends Component {
+class CarNameCard extends Component {
   displayCarData() {
     let data = this.props.data;
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.latfillup}</div>
+      return <div>{data.car.carName}</div>
     }
   }
   render() {
@@ -23,4 +23,4 @@ class LastFillupCard extends Component {
   }
 }
 
-export default graphql(getCarlatfillupQuery)(LastFillupCard);
+export default graphql(getCarNameQuery)(CarNameCard);

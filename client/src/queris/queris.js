@@ -19,6 +19,25 @@ const getOwnersQuery = gql`
   }
 `;
 
+const getCarNameQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      carName
+    }
+  }
+`;
+
+
+const getCarlatfillupQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      latfillup
+    }
+  }
+`;
+
+
+
 
 const AddCarMutation = gql`
  mutation($carName: String!, $latfillup: Number!, $latfilluptime: String!, $fuelleft: Number!, $traveldsince: Number!, $diagnostic: String!, $diagnosticdetail: String!, $businessratio: Number!, $businesstotal: Number!, $averagespeed: Number!, $traveldistancetotal: Number!, $traveldistancethisyear: Number!, $timeincar: Number!, $emissions: Number!, $fueleconomy: Number!, $parking: String!, $timetraveld: Number!, $startlocation: String!, $endlocation: String!, $ownerId: ID!){
@@ -50,7 +69,9 @@ const AddCarMutation = gql`
 export {
   getCarsQuery,
   getOwnersQuery,
-  AddCarMutation
+  AddCarMutation,
+  getCarlatfillupQuery,
+  getCarNameQuery
 };
 
 
