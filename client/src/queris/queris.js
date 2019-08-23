@@ -93,6 +93,35 @@ const getBusinessTotalQuery = gql`
   }
 `;
 
+const getAverageSpeedQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      averagespeed
+    }
+  }
+`;
+
+const getTravelDistanceTotalQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      traveldistancetotal
+    }
+  }
+`;
+
+
+const getTravelDistanceThisYearQuery = gql`
+  {
+    car(id: "5d5dd3aa55642b15a9d08d07") {
+      traveldistancethisyear
+    }
+  }
+`;
+
+
+
+
+
 
 
 
@@ -135,7 +164,10 @@ export {
   getDiagnosticQuery,
   getDiagnosticDetailQuery,
   getBusinessRatioQuery,
-  getBusinessTotalQuery
+  getBusinessTotalQuery,
+  getAverageSpeedQuery,
+  getTravelDistanceTotalQuery,
+  getTravelDistanceThisYearQuery
 };
 
 

@@ -12,6 +12,9 @@ import DiagnosticCard from "../../Components/Card/DiagnosticCard";
 import DiagnosticDetailCard from "../../Components/Card/DiagnosticDetailCard";
 import BusinessRatioCard from "../../Components/Card/BusinessRatioCard";
 import BusinessTotalCard from "../../Components/Card/BusinessTotalCard";
+import AverageSpeedCard from "../../Components/Card/AverageSpeedCard";
+import TravelDistanceTotalCard from "../../Components/Card/TravelDistanceTotalCard";
+import TravelDistanceThisYearCard from "../../Components/Card/TravelDistanceThisYearCard";
 
 
 
@@ -30,6 +33,9 @@ class DashboardView extends Component {
         <DiagnosticDetailCard />
         <BusinessRatioCard />
         <BusinessTotalCard />
+        <AverageSpeedCard />
+        <TravelDistanceTotalCard />
+        <TravelDistanceThisYearCard />
 
         <GoogleMap />
         <AntdTable />
