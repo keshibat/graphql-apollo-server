@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GoogleMap from "../../Components/GoogleMap/GoogleMap";
 import AntdTableComponent from "../../Components/AntdTable/AntdTableComponent";
 
-import CarList from "../../Components/CarList"
+// import CarList from "../../Components/CarList"
 import CarNameCard from "../../Components/Card/CarNameCard";
 import LastFillupCard from "../../Components/Card/LastFillupCard";
 import LastFillupTimeCard from "../../Components/Card/LastFillupTimeCard";
