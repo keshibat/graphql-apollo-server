@@ -19,7 +19,7 @@ class EmissionsCard extends Component {
         <Card className="data-cards-r1" >
           <Card.Content>
             <Icon name="motorcycle" size="huge" />
-            <Card.Header>Emissions: {this.displayCarData()}</Card.Header>
+            <Card.Header>Emissions: {this.displayCarData()} KG CO2</Card.Header>
             <Card.Content extra>
               <hr></hr>
             </Card.Content>

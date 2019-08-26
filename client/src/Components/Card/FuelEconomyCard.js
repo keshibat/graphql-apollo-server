@@ -19,7 +19,7 @@ class FuelEconomyCard extends Component {
         <Card className="data-cards-r1" >
           <Card.Content>
             <Icon name="motorcycle" size="huge" />
-            <Card.Header>Average Speed: {this.displayCarData()}</Card.Header>
+            <Card.Header>Average : {this.displayCarData()}L/100km</Card.Header>
             <Card.Content extra>
               <hr></hr>
             </Card.Content>
