@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getDiagnosticQuery } from "../../queris/queris";
-import { Card, Icon, Responsive } from 'semantic-ui-react';
+import { Card, Icon, Responsive } from "semantic-ui-react";
+
+import DiagnosticDetailCard from "./DiagnosticDetailCard";
 
 
 class DiagnosticCard extends Component {
@@ -22,7 +24,7 @@ class DiagnosticCard extends Component {
             <Card.Header>Diagnostic issues: {this.displayCarData()}</Card.Header>
             <Card.Content extra>
               <hr></hr>
-              <p>see a mechanic</p>
+              <p><DiagnosticDetailCard/></p>
             </Card.Content>
           </Card.Content>
         </Card>

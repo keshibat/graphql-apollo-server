@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getLastFillupQuery } from "../../queris/queris";
-import { Card, Icon, Responsive } from 'semantic-ui-react';
+import { Card, Icon, Responsive } from "semantic-ui-react";
+
+import LastFillupTimeCard from "./LastFillupTimeCard";
+import EndLocationCard from "./EndLocationCard"
 
 
 
@@ -26,7 +29,8 @@ class LastFillupCard extends Component {
             <Card.Header>Last Fill Up:{this.displayCarDataLatFillup()}</Card.Header>
             <Card.Content extra>
               <hr></hr>
-              <p></p>
+              <p><LastFillupTimeCard/></p>
+              <p><EndLocationCard /></p>
             </Card.Content>
           </Card.Content>
         </Card>

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getBusinessRatioQuery } from "../../queris/queris";
-import { Card, Icon, Responsive } from 'semantic-ui-react';
+import { Card, Icon, Responsive } from "semantic-ui-react";
+
+import BusinessTotalCard from "./BusinessTotalCard";
 
 
 class BusinessRatioCard extends Component {
@@ -19,7 +21,8 @@ class BusinessRatioCard extends Component {
         <Card className="data-cards-r1" >
           <Card.Content>
             <Icon name="motorcycle" size="huge" />
-            <Card.Header>Business Travel: {this.displayCarData()}</Card.Header>
+            <Card.Header>Business Travel: {this.displayCarData()}%</Card.Header>
+            <Card.Header><BusinessTotalCard />km(Total)</Card.Header>
             <Card.Content extra>
               <hr></hr>
             </Card.Content>
