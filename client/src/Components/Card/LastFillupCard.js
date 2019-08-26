@@ -4,8 +4,10 @@ import { getLastFillupQuery } from "../../queris/queris";
 import { Card, Icon, Responsive } from 'semantic-ui-react';
 
 
+
 class LastFillupCard extends Component {
-  displayCarData() {
+
+  displayCarDataLatFillup() {
     let data = this.props.data;
     if (data.loading) {
       return (<div>Loading</div>);
@@ -13,17 +15,18 @@ class LastFillupCard extends Component {
       return <div>{data.car.latfillup}</div>
     }
   }
+
+
   render() {
     return (
       <Responsive as={Card}>
         <Card className="data-cards-r1" >
           <Card.Content>
             <Icon name="motorcycle" size="huge" />
-            <Card.Header>Last Fill Up: {this.displayCarData()}</Card.Header>
+            <Card.Header>Last Fill Up:{this.displayCarDataLatFillup()}</Card.Header>
             <Card.Content extra>
               <hr></hr>
-              <p>Thursday 15th Aug 3pm</p>
-              <p>Last Location: Bondi Beach</p>
+              <p></p>
             </Card.Content>
           </Card.Content>
         </Card>
