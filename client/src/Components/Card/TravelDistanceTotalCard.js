@@ -4,6 +4,9 @@ import { getTravelDistanceTotalQuery } from "../../queris/queris";
 import { Card, Icon, Responsive } from 'semantic-ui-react';
 
 
+import TravelDistanceThisYearCard from "./TravelDistanceThisYearCard";
+
+
 class TravelDistanceTotalCard extends Component {
   displayCarData() {
     let data = this.props.data;
@@ -20,10 +23,11 @@ class TravelDistanceTotalCard extends Component {
           <Card.Content>
             <Icon name="motorcycle" size="huge" />
             <Card.Header>Total Distance: {this.displayCarData()}</Card.Header>
+            <Card.Header><TravelDistanceThisYearCard/></Card.Header>
             <Card.Content extra>
               <hr></hr>
-              <p>340000 km(Total)</p>
-              <p>40000 km(This Tax Year)</p>
+              <p>{this.displayCarData()}</p>
+              <p><TravelDistanceThisYearCard /></p>
             </Card.Content>
           </Card.Content>
         </Card>
