@@ -1,0 +1,53 @@
+.data-cards-r1 {
+    max-width: 20vw;
+    margin-top: 5rem;
+}
+
+body {
+    background-color: #e1e4e8;
+}
+
+.ui.cards {
+    justify-content: center;
+}
+
+.ui.container {
+    margin: 0 !important;
+    width: 100%;
+    margin-top: 2vh !important;
+
+}
+
+.ui.cards>.card {
+    margin: 0.5em 1em;
+}
+
+.ui.card, .ui.cards>.card {
+    width: 20vw;
+}
+
+.ui.placeholder.segment {
+    flex-direction: inherit;
+    justify-content: normal;
+    min-height: 22rem;
+    margin: 4vh 5.5vw 4vh 5.5vw;
+}
+
+ .three-cards {
+    width: 30vw;
+}
+
+.three-cards-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-bg {
+    background-color: white;
+}
+
+/******** LOGINPAGE STYLES *********/
+
+.bg-image {
+    background-image: url('https://unsplash.com/photos/nKg8IsVFMV8');
+}
