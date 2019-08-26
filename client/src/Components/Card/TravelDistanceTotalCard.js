@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getTravelDistanceTotalQuery } from "../../queris/queris";
+import { Card, Icon, Responsive } from 'semantic-ui-react';
 
 
 class TravelDistanceTotalCard extends Component {
@@ -14,11 +15,19 @@ class TravelDistanceTotalCard extends Component {
   }
   render() {
     return (
-      <div>
-        <ul>
-          {this.displayCarData()}
-        </ul>
-      </div>
+      <Responsive as={Card}>
+        <Card className="data-cards-r1" >
+          <Card.Content>
+            <Icon name="motorcycle" size="huge" />
+            <Card.Header>Total Distance: {this.displayCarData()}</Card.Header>
+            <Card.Content extra>
+              <hr></hr>
+              <p>340000 km(Total)</p>
+              <p>40000 km(This Tax Year)</p>
+            </Card.Content>
+          </Card.Content>
+        </Card>
+      </Responsive>
     );
   }
 }

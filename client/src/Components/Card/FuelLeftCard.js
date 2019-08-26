@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getFuelLeftQuery } from "../../queris/queris";
+import { Card, Icon, Responsive } from 'semantic-ui-react';
 
 
 class FuelLeftCard extends Component {
@@ -14,11 +15,18 @@ class FuelLeftCard extends Component {
   }
   render() {
     return (
-      <div>
-        <ul>
-          {this.displayCarData()}
-        </ul>
-      </div>
+      <Responsive as={Card}>
+        <Card className="data-cards-r1" >
+          <Card.Content>
+            <Icon name="motorcycle" size="huge" />
+            <Card.Header>Estimated fuel left: {this.displayCarData()}</Card.Header>
+            <Card.Content extra>
+              <hr></hr>
+              <p>Traveld: 200km(since last fill up)</p>
+            </Card.Content>
+          </Card.Content>
+        </Card>
+      </Responsive>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GoogleMap from "../../Components/GoogleMap/GoogleMap";
 import AntdTableComponent from "../../Components/AntdTable/AntdTableComponent";
-
+import { Card } from 'semantic-ui-react';
 // import CarList from "../../Components/CarList"
 import CarNameCard from "../../Components/Card/CarNameCard";
 import LastFillupCard from "../../Components/Card/LastFillupCard";
@@ -29,35 +29,38 @@ import EndLocationCard from "../../Components/Card/EndLocationCard";
 class DashboardView extends Component {
   render() {
     return (
-      <div>
-        <h1>Dashboard</h1>
-        {/* <CarList /> */}
-        <CarNameCard />
-        <LastFillupCard />
-        <LastFillupTimeCard />
-        <FuelLeftCard />
-        <TraveldSinceCard />
-        <DiagnosticCard />
-        <DiagnosticDetailCard />
-        <BusinessRatioCard />
-        <BusinessTotalCard />
-        <AverageSpeedCard />
-        <TravelDistanceTotalCard />
-        <TravelDistanceThisYearCard />
-        <TimeInCarCard />
-        <EmissionsCard />
-        <FuelEconomyCard />
-        <ParkingCard />
-        <TimeTraveldCard />
-        <StartLocationCard />
-        <EndLocationCard />
-
-        <GoogleMap />
-
-        <h1>Table</h1>
-        <AntdTableComponent />
-
-      </div>
+      <>
+        <div className="ui container">
+        <h1><CarNameCard /></h1>
+        </div>
+        <div className="ui container">
+          <Card.Group>
+            <LastFillupCard />
+            <FuelLeftCard />
+            <DiagnosticCard />
+            <BusinessRatioCard />
+          </Card.Group>
+        </div>
+        <div className="ui container">
+          <GoogleMap />
+        </div>
+        <div className="ui container">
+          <Card.Group>
+            <AverageSpeedCard />
+            <TravelDistanceTotalCard />
+            <TimeInCarCard />
+          </Card.Group>
+        </div>
+        <div className="ui container">
+          <Card.Group>
+            <EmissionsCard />
+            <FuelEconomyCard />
+          </Card.Group>
+        </div>
+        <div className="ui container">
+          <AntdTableComponent />
+        </div>
+      </>
     );
   }
 }
