@@ -1,7 +1,8 @@
-
 import React from 'react';
 import 'antd/dist/antd.css';
 import { Table, Button, Tag } from 'antd';
+
+import { Segment } from "semantic-ui-react";
 
 
 
@@ -207,15 +208,17 @@ class AntdTableComponent extends React.Component {
 
     ];
     return (
-      <div>
-        <div className="table-operations">
-          <Button onClick={this.setTimeSort}>Sort time</Button>
-          <Button onClick={this.setDistanceSort}>Sort Distance</Button>
-          <Button onClick={this.clearFilters}>Clear filters</Button>
-          <Button onClick={this.clearAll}>Clear filters and sorters</Button>
+      <Segment>
+        <div>
+          <div className="table-operations">
+            <Button onClick={this.setTimeSort}>Sort time</Button>
+            <Button onClick={this.setDistanceSort}>Sort Distance</Button>
+            <Button onClick={this.clearFilters}>Clear filters</Button>
+            <Button onClick={this.clearAll}>Clear filters and sorters</Button>
+          </div>
+          <Table columns={columns} dataSource={data} onChange={this.handleChange} />
         </div>
-        <Table columns={columns} dataSource={data} onChange={this.handleChange} />
-      </div>
+      </Segment>
     );
   }
 }
