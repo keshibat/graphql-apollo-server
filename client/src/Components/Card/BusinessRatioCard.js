@@ -27,7 +27,7 @@ class BusinessRatioCard extends Component {
           </div>
           <Card.Content extra>
             <hr></hr>
-            <h2><BusinessTotalCard /></h2>
+            <h3><BusinessTotalCard /></h3>
           </Card.Content>
         </Card.Content>
         <hr></hr>

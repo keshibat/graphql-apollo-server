@@ -17,10 +17,10 @@ class TimeInCarCard extends Component {
     return (
       <Card className="data-cards-r1" >
         <Card.Content>
-          <Icon float="left" circular inverted color="grey" name="car" size="big" />
+          <Icon circular inverted color="grey" name="car" size="big" />
           <div className="data-content">
             <p>Time in Car (this year)</p>
-            <h2>{this.displayCarData()}</h2>
+            <h2>120 Hours</h2>
           </div>
           <Card.Content extra>
             <hr></hr>

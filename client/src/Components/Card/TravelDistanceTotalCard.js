@@ -28,7 +28,7 @@ class TravelDistanceTotalCard extends Component {
           </div>
           <Card.Content extra>
             <hr></hr>
-            <h2><TravelDistanceThisYearCard /></h2>
+            <h3><TravelDistanceThisYearCard /></h3>
           </Card.Content>
         </Card.Content>
         <hr></hr>

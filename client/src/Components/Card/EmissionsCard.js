@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getEmissionsQuery } from "../../queris/queris";
-import { Card, Icon, Responsive } from 'semantic-ui-react';
+import { Card, Icon } from 'semantic-ui-react';
 
 
 class EmissionsCard extends Component {
@@ -10,22 +10,23 @@ class EmissionsCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.emissions}</div>
+      return <div>{data.car.emissions}KG CO2</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Emissions: {this.displayCarData()} KG CO2</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon float="left" circular inverted color="green" name="tree" size="big" />
+          <div className="data-content">
+            <p>EMISSIONS</p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
     );
   }
 }

@@ -10,22 +10,23 @@ class FuelEconomyCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.fueleconomy}</div>
+      return <div>{data.car.fueleconomy}/100km</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Average : {this.displayCarData()}L/100km</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon circular inverted color="violet" name="dollar sign" size="big" />
+          <div className="data-content">
+            <p>Fuel Economy</p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
     );
   }
 }
