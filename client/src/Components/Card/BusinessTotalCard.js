@@ -9,15 +9,13 @@ class BusinessTotalCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.businesstotal}</div>
+      return <div>{data.car.businesstotal} km (Total)</div>
     }
   }
   render() {
     return (
       <div>
-        <ul>
           {this.displayCarData()}
-        </ul>
       </div>
     );
   }

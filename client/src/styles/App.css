@@ -1,6 +1,22 @@
-.data-cards-r1 {
-    max-width: 20vw;
-    margin-top: 5rem;
+.data-content h3 {
+    margin: 0 auto;
+}
+h2 {
+    font-weight: 100;
+}
+.data-content h2 {
+    margin: 0 auto;
+
+}
+
+.data-content {
+    display: inline-block;
+    float: right;
+}
+
+.data-content p {
+    color: gray;
+    float: right;
 }
 
 body {
@@ -12,7 +28,7 @@ body {
 }
 
 .ui.container {
-    margin: 0 !important;
+    margin: 0 auto !important;
     width: 100%;
     margin-top: 2vh !important;
 
@@ -23,7 +39,7 @@ body {
 }
 
 .ui.card, .ui.cards>.card {
-    width: 20vw;
+    width: 20%;
 }
 
 .ui.placeholder.segment {
@@ -44,10 +60,41 @@ body {
 
 .container-bg {
     background-color: white;
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 2vh;
+}
+
+.card-data-text {
+    font-size: 2rem;
+    text-align: right;
 }
 
 /******** LOGINPAGE STYLES *********/
 
 .bg-image {
     background-image: url('https://unsplash.com/photos/nKg8IsVFMV8');
+}
+
+/******* SIDEBAR STYLES *******/
+.pushable>.pusher {
+    background-color: #e1e4e8;
+}
+
+.ui.thin.left.sidebar {
+    width: 300px;
+}
+
+/******* MEDIA BREAKPOINTS ******/
+
+@media only screen and (max-width: 1250px) {
+    .ui.card, .ui.cards>.card {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ui.card, .ui.cards>.card {
+        width: 50%;
+    }
 }

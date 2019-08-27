@@ -12,23 +12,27 @@ class BusinessRatioCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.businessratio}</div>
+      return <div>{data.car.businessratio} %</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Business Travel: {this.displayCarData()}%</Card.Header>
-            <Card.Header><BusinessTotalCard />km(Total)</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon circular inverted color="blue" name="handshake" size="big" />
+          <div className="data-content">
+            <p>Business Travel</p>
+            <h2>{this.displayCarData()}</h2>
+
+          </div>
+          <Card.Content extra>
+            <hr></hr>
+            <h2><BusinessTotalCard /></h2>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+        <hr></hr>
+      </Card>
+
     );
   }
 }

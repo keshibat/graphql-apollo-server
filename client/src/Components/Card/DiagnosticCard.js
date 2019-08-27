@@ -17,18 +17,19 @@ class DiagnosticCard extends Component {
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Diagnostic issues: {this.displayCarData()}</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-              <p><DiagnosticDetailCard/></p>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon circular inverted color="red" name="wrench" size="big" />
+          <div className="data-content">
+            <p>Diagnostic Issues    </p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
+            <p><DiagnosticDetailCard /></p>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
     );
   }
 }

@@ -12,23 +12,27 @@ class FuelLeftCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.fuelleft}</div>
+      return <div>{data.car.fuelleft} km</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Estimated fuel left: {this.displayCarData()}</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-              <p><TraveldSinceCard/>km tripped(since last fill up)</p>
-            </Card.Content>
+
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon circular inverted color="orange" name="tachometer alternate" size="big" />
+          <div className="data-content">
+            <p>Esitmated Fuel Left:</p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
+            <p><TraveldSinceCard />km(since last fill up)</p>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
+
+
     );
   }
 }
