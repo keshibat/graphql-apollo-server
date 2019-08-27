@@ -9,7 +9,8 @@ class TraveldSinceCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.traveldsince}</div>
+      return <div>{data.car.traveldsince} km traveld (since last fillup)</div>
+
     }
   }
   render() {

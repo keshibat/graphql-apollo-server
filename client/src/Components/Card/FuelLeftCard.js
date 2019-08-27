@@ -27,7 +27,7 @@ class FuelLeftCard extends Component {
           </div>
           <Card.Content extra>
             <hr></hr>
-            <p><TraveldSinceCard />km(since last fill up)</p>
+            <p><TraveldSinceCard /></p>
           </Card.Content>
         </Card.Content>
       </Card>
