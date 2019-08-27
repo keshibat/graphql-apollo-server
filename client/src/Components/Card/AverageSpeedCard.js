@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getAverageSpeedQuery } from "../../queris/queris";
-import { Card, Icon, Responsive } from 'semantic-ui-react';
+import { Card, Icon } from 'semantic-ui-react';
 
 
 class AverageSpeedCard extends Component {
@@ -10,22 +10,23 @@ class AverageSpeedCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.averagespeed}</div>
+      return <div>{data.car.averagespeed} km/hr</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Average Speed: {this.displayCarData()}</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon float="left" circular inverted color="yellow" name="shipping fast" size="big" />
+          <div className="data-content">
+            <p>Average Speed</p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
     );
   }
 }

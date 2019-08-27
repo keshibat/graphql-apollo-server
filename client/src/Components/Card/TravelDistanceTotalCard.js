@@ -13,25 +13,26 @@ class TravelDistanceTotalCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.traveldistancetotal}</div>
+      return <div>{data.car.traveldistancetotal} km</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Total Distance: {this.displayCarData()}</Card.Header>
-            <Card.Header><TravelDistanceThisYearCard/></Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-              <p>{this.displayCarData()}</p>
-              <p><TravelDistanceThisYearCard /></p>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon circular inverted color="brown" name="road" size="big" />
+          <div className="data-content">
+            <p>Total Distance</p>
+            <h2>{this.displayCarData()}</h2>
+
+          </div>
+          <Card.Content extra>
+            <hr></hr>
+            <h2><TravelDistanceThisYearCard /></h2>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+        <hr></hr>
+      </Card>
     );
   }
 }

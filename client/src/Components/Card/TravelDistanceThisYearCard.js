@@ -9,15 +9,13 @@ class TravelDistanceThisYearCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.traveldistancethisyear}</div>
+      return <div>{data.car.traveldistancethisyear} km(This tax year)</div>
     }
   }
   render() {
     return (
       <div>
-        <ul>
           {this.displayCarData()}
-        </ul>
       </div>
     );
   }

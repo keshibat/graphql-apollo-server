@@ -10,22 +10,23 @@ class TimeInCarCard extends Component {
     if (data.loading) {
       return (<div>Loading</div>);
     } else {
-      return <div>{data.car.timeincar}</div>
+      return <div>{data.car.timeincar} hours</div>
     }
   }
   render() {
     return (
-      <Responsive as={Card}>
-        <Card className="data-cards-r1" >
-          <Card.Content>
-            <Icon name="motorcycle" size="huge" />
-            <Card.Header>Time in car: {this.displayCarData()} hours</Card.Header>
-            <Card.Content extra>
-              <hr></hr>
-            </Card.Content>
+      <Card className="data-cards-r1" >
+        <Card.Content>
+          <Icon float="left" circular inverted color="grey" name="car" size="big" />
+          <div className="data-content">
+            <p>Time in Car (this year)</p>
+            <h2>{this.displayCarData()}</h2>
+          </div>
+          <Card.Content extra>
+            <hr></hr>
           </Card.Content>
-        </Card>
-      </Responsive>
+        </Card.Content>
+      </Card>
     );
   }
 }
