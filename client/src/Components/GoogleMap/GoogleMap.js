@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import * as parkData from "../../data/skateboard-parks.json";
+import { Embed, Header, Icon, Segment } from 'semantic-ui-react'
 
 
 class SimpleMap extends Component {
@@ -30,16 +31,30 @@ class SimpleMap extends Component {
   }
 
   render() {
+
     return (
-      <div style={{ height: '100vh', width: '100%' }}>
-      <Map
-        google={this.props.google}
-        zoom={11}
-          initialCenter={{ lat: 45.4211, lng: -75.6903 }}
-      >
-        {this.displayMarkers()}
-      </Map>
-      </div>
+
+      <Segment>
+        <Header icon>
+            <Icon color="red" name="map marker alternate" size="big" />
+            Parking Location
+        </Header>
+        <div class="ui embed">
+
+          <Map
+            google={this.props.google}
+            zoom={9}
+            initialCenter={{ lat: 45.4211, lng: -75.6903 }}
+          >
+            {this.displayMarkers()}
+          </Map>
+
+        </div>
+      </Segment>
+
+
+
+
     );
   }
 }
